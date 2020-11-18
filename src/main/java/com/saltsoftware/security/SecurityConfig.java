@@ -105,20 +105,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //Linton Appollis 216182484 Setting Authorization For Patient Payment Record (11-01-2020)
 
-                .antMatchers(HttpMethod.POST, "/saltBookingManagementApp/PatientPaymentRecord/create").hasAuthority(SUPER_ROLE)
-                .antMatchers(HttpMethod.POST,"/saltBookingManagementApp/PatientPaymentRecord//update").hasRole(SUPER_ROLE)
-                .antMatchers(HttpMethod.DELETE,"/saltBookingManagementApp/PatientPaymentRecord//delete").hasAuthority(SUPER_ROLE)
-                .antMatchers(HttpMethod.GET, "/saltBookingManagementApp/PatientPaymentRecord/read").hasRole(BASIC_ROLE)
-                .antMatchers(HttpMethod.GET, "/saltBookingManagementApp/PatientPaymentRecord/**/all").hasRole(BASIC_ROLE)
+                .antMatchers(HttpMethod.POST, "/paymentrecord/create").hasRole(SUPER_ROLE)
+                .antMatchers(HttpMethod.PUT, "/paymentrecord/**/update").hasRole(SUPER_ROLE)
+                .antMatchers(HttpMethod.GET, "/paymentrecord/read").hasRole(BASIC_ROLE)
+                .antMatchers(HttpMethod.GET, "/paymentrecord/all").hasRole(BASIC_ROLE)
+                .antMatchers(HttpMethod.DELETE, "/paymentrecord/delete").hasRole(SUPER_ROLE)
 
 
                 //Craig Carr 204111307 BookingScheduleController Authorization on endpoints
 
-                .antMatchers(HttpMethod.POST, "/saltBookingManagementApp/bookingschedule/create").hasAuthority(SUPER_ROLE)
-                .antMatchers(HttpMethod.POST,"/saltBookingManagementApp/bookingschedule/update").hasRole(SUPER_ROLE)
-                .antMatchers(HttpMethod.DELETE,"/saltBookingManagementApp/bookingschedule/delete").hasAuthority(SUPER_ROLE)
-                .antMatchers(HttpMethod.GET, "/saltBookingManagementApp/bookingschedule/read").hasRole(BASIC_ROLE)
-                .antMatchers(HttpMethod.GET, "/saltBookingManagementApp/bookingschedule/**/all").hasRole(BASIC_ROLE)
+                .antMatchers(HttpMethod.POST, "/bookingschedule/create").hasRole(SUPER_ROLE)
+                .antMatchers(HttpMethod.PUT,"/bookingschedule/**/update").hasRole(SUPER_ROLE)
+                .antMatchers(HttpMethod.GET, "/bookingschedule/read").hasRole(BASIC_ROLE)
+                .antMatchers(HttpMethod.GET, "/bookingschedule/**/all").hasRole(BASIC_ROLE)
+                .antMatchers(HttpMethod.DELETE,"/bookingschedule/delete").hasRole(SUPER_ROLE)
 
 
                 //Abram Rakgotho 215031393 configuring endpoint
